@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        {% block head%}
+             <title>Gimn Academy</title>
+        {% endblock %}
+        
+        <link  rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Rationale&display=swap" >
+        <link  rel="stylesheet" href="/style.css">        
+    </head>
+
+    
+    <body>
+        <header>  
+            <div class="links">
+                <a href="/" class="active">Instrutores</a>
+                <a href="/members">Projetos</a>                
+            </div>
+        </header>
+        <!-- BLOCO DINÂMICO DA TEMP.ENGINE NUNJUCKS-->
+        {% block content %}
+
+        {% endblock %}
+       
+    </body>
+
+</html>
