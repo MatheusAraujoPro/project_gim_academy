@@ -186,8 +186,36 @@ a.button{
     text-decoration: none;
     box-sizing: border-box;
     text-align: center;
+}
 
+#form-delete button[type="submit"]{
+    margin-top: 8px;
+    background-color: crimson;
 }
 
 
+/*       PAGE INDEX       */
+.table-container{
+    display: block;
+}
+
+.table-container table{
+    width: 100%;
+    box-sizing: border-box;
+    padding: 16px;
+}
+
+thead, tr,  th {
+    text-align: left;
+}
+
+tbody, td, th {
+    padding: 16px 0px;
+    border-bottom: solid 1px rgb(190, 168, 168);
+}
+
+/*   PEGANDO O ÚLTIMO TR DO TD*/
+tbody tr:last-child td {
+    border: none;
+}
 

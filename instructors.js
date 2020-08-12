@@ -3,6 +3,11 @@ const fs       =  require('fs')
 const data     =  require('./data.json')
 const { age, date }  =  require('./utils')
 
+//list
+exports.list = function(req, res){   
+    return res.render('instructors/index', {instructors: data.instructors})
+}
+ 
 //show
 exports.show = function(req, res){
     const { id } = req.params
@@ -24,7 +29,7 @@ exports.show = function(req, res){
         created_at: new Intl.DateTimeFormat('pt-BR').format(instructorFound.created_at)
     }
 
-    return res.render('instructors/index', {instructor})
+    return res.render('instructors/show', {instructor})
 
 }
 
@@ -117,7 +122,6 @@ exports.put = function(req, res){
         ...instructorFound,
         ...req.body,
            birth:Date.parse(req.body.birth)
-
     }
 
     //Atualizando o objeto no Data.json
@@ -131,5 +135,28 @@ exports.put = function(req, res){
         return res.redirect(`/instructors/${id}`)
     })   
 
+
+}
+
+//delete
+exports.delete = function(req, res){
+    const { id } = req.body   
+    
+    
+    const fillteredInstructors = data.instructors.filter((instructor) =>{
+        return instructor.id != id       
+    })
+
+    //Deletando o instrutor passado
+    data.instructors = fillteredInstructors
+
+    
+    //Escrever um arquivo Json com os dados que estão vindo do front
+    fs.writeFile('data.json', JSON.stringify(data, null, 2), function(err){
+        if(err) return res.send('Write Fille Error')
+
+        return res.redirect(`/instructors/`) 
+    })   
+   
 
 }

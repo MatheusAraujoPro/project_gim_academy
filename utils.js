@@ -24,10 +24,10 @@ module.exports = {
         const year  = date.getUTCFullYear()
 
         //mm (0 a 11)
-        const month = `0${date.getUTCMonth() + 1}`.slice(-2)
+        const month = `0${date.getUTCMonth() + 1}`.slice(-2) //pegando os ultimos dois números
 
         //dd (1 a 31)
-        const day   = `0${date.getUTCDate()}`.slice(-2)
+        const day   = `0${date.getUTCDate()}`.slice(-2) //pegando os últimos dois números
 
         return `${year}-${month}-${day}`
 
