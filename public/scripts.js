@@ -1,14 +1,17 @@
-const modalOverlay = document.querySelector('.modal__overlay');//pegando referencia do modal
-const cards        = document.querySelectorAll('.card'); //pegando as referencias dos cards
-const btnClose     = document.querySelector('.close_modal');
+const currentPage = location.pathname
+const MenuItem    = document.querySelectorAll('header .links a')
 
-for(let card of cards){
-    card.addEventListener("click", function(){
-        let video_id = card.getAttribute('id');
-        window.location.href=`/video?id=${video_id}`;
-
-    })
+for(item of MenuItem){
+    if(currentPage.includes(item.getAttribute('href'))){
+        item.classList.add('active')
+    }else{
+      item.classList.remove('active')  
+    }
+    
+    
+   
 }
+
 
 
 

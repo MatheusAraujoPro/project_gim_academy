@@ -1,7 +1,7 @@
 //arquivo de funções para os instrutores
 const fs       =  require('fs')
-const data     =  require('./data.json')
-const { age, date }  =  require('./utils')
+const data     =  require('../data.json')
+const { age, date }  =  require('../utils')
 
 //list
 exports.list = function(req, res){   
@@ -34,6 +34,11 @@ exports.show = function(req, res){
 }
 
 //create
+exports.create = function(req, res){
+    return res.render('instructors/create')
+}
+
+//post
 exports.post = function(req, res) {    
     //Usando um constructor para a validação
     const keys = Object.keys(req.body)

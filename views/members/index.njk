@@ -1,7 +1,7 @@
 {% extends 'layout.njk' %}
 
 {% block content %}
-    <div class="card table-container">        
+    <div class="card table-container">
         <table>
             <!--Linha de cima  -->
             <thead>
@@ -24,10 +24,7 @@
                         <td><a href="/instructors/{{instructor.id}}">Ver</a></td>
                     </tr>                
                 {% endfor %}
-            </tbody>            
+            </tbody>
         </table>
-        <section>
-            <a href="/instructors/create">Novo</a>
-        </section>
     </div>
 {% endblock content %}
